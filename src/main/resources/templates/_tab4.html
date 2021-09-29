@@ -1,0 +1,53 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Student Details</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>Student Details</h3><button class="btn btn-success" type="submit" onclick="history.go(-1)">Back</button>
+			
+			<hr/>
+		
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+					<tr>
+					<th>ID</th>
+					<th>STUDENT NAME</th>
+                    <th>ROLLNO</th>
+                    <th>PERCENTAGE</th>
+                    <th>BACKLOGS</th>
+                    <th>FATHERNAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="employee: ${students}">
+						<td th:text="${employee.id}" />
+						<td th:text="${employee.studentname}" />
+						<td th:text="${employee.rollno}" />
+						<td th:text="${employee.percentage}" />
+						<td th:text="${employee.backlogs}" />
+						<td th:text="${employee.fathername}" />
+						<td th:text="${employee.email}" />
+						<td th:text="${employee.phone}" />
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

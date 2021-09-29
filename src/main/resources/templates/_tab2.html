@@ -1,0 +1,64 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Student Details</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		<form class="form-signin" method="POST" th:action="@{/Company}">
+			<h3>Student Details</h3><button class="btn btn-success" type="submit" onclick="history.go(-1)">Back</button>
+			
+			<hr/>
+		
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+					<tr>
+					<th>Company Name</th>
+                    <th>CGPA</th>
+                    <th>Drive Date</th>
+                    <th>Position</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<th>Capgemini</th>
+                    <th>Above or Equal 6 CGPA</th>
+                    <th>13-NOV-2021</th>
+                    <th>Software Engineer</th>
+					</tr>
+					<tr>
+					<th>MAQ</th>
+                    <th>Above or Equal 7.5 CGPA</th>
+                    <th>23-OCT-2021</th>
+                    <th>Software Engineer</th>
+					</tr>
+					<tr>
+					<th>Accenture</th>
+                    <th>Above or Equal 6 CGPA</th>
+                    <th>08-OCT-2021</th>
+                    <th>Software Engineer</th>
+					</tr>
+					<tr>
+					<th>Tek Systems</th>
+                    <th>Above or Equal 6 CGPA</th>
+                    <th>09-NOV-2021</th>
+                    <th>Software Engineer</th>
+					</tr>
+				</tbody>
+				
+			</table>
+		</form>
+		</div>
+	
+		
+	</body>
+	
+</html>

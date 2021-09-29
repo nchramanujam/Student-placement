@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <title>Create an account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	<style> 
+#placement {
+  height: 500px;
+  background-color: #cccccc;
+  background-image: url('/images/placement.jpg');
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div sec:authorize="isAuthenticated()">
+        <form id="logoutForm" method="POST" th:action="@{/logout}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <h2 style="font-size: 18px;padding-left: 73%;">Welcome <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()"><button> Logout</button></a></h2>
+    </div>
+  </div>
+  <div class="container">
+
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-tabs mt-5" id="myTabs">
+         <form id="tab1" method="GET" th:action="@{/tab1}">
+            <li class="nav-item"><a onclick="document.forms['tab1'].submit()"><button> Student Registration</button></a></li>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>&nbsp;&nbsp;&nbsp;&nbsp;
+        <form id="tab4" method="GET" th:action="@{/tab4}">
+            <li class="nav-item"><a onclick="document.forms['tab4'].submit()"><button> Student Details</button></a></li>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>&nbsp;&nbsp;&nbsp;&nbsp;
+        <form id="tab2" method="GET" th:action="@{/tab2}">
+            <li class="nav-item"><a onclick="document.forms['tab2'].submit()"><button> Company Drive Details</button></a></li>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>&nbsp;&nbsp;&nbsp;&nbsp;
+        <form id="tab3" method="GET" th:action="@{/tab3}">
+            <li class="nav-item"><a onclick="document.forms['tab3'].submit()"><button> Placement Eligibility Criteria</button></a></li>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>&nbsp;&nbsp;&nbsp;&nbsp;
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div id="placement"></div>
+<link data-require="bootstrap@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</body>
+</html>
